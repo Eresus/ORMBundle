@@ -155,6 +155,46 @@ abstract class AbstractEntity implements ArrayAccess
 	//-----------------------------------------------------------------------------
 
 	/**
+	 * Устанавливает значение свойства типа «Дата»
+	 *
+	 * @param string $property  имя свойства
+	 * @param mixed  $value     значение свойства
+	 *
+	 * @throws InvalidArgumentException
+	 *
+	 * @return void
+	 *
+	 * @since 0.7.1
+	 */
+	protected function setDateProperty($property, $value)
+	{
+		assert('is_string($property)');
+
+		switch (true)
+		{
+			case $value instanceof \DateTime:
+			case is_null($value):
+				// Трансформация не требуется
+				break;
+
+			case false === $value:
+			case '' === $value:
+				$value = null;
+				break;
+
+			case is_string($value):
+				$value = \DateTime::createFromFormat('Y-m-d', $value);
+				break;
+
+			default:
+				throw new InvalidArgumentException('Can not convert value of type "' . gettype($value) .
+					'" to date');
+		}
+		$this->{$property} = $value;
+	}
+	//-----------------------------------------------------------------------------
+
+	/**
 	 * Проверяет, существует ли указанное свойство
 	 *
 	 * @param string $property
