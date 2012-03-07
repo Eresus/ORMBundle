@@ -148,7 +148,7 @@ abstract class AbstractEntity implements ArrayAccess
 	 */
 	protected function get($id)
 	{
-		assert('is_string($property)');
+		assert('is_string($id)');
 
 		return $GLOBALS['kernel']->getContainer()->get($id);
 	}

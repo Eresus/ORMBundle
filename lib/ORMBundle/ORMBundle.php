@@ -2,7 +2,7 @@
 /**
  * Компонент Eresus ORM для  Symfony2
  *
- * @version 1.0.1
+ * @version 1.1.1
  *
  * @copyright 2011, Михаил Красильников, <mihalych@vsepofigu.ru>
  *
