@@ -75,7 +75,7 @@ abstract class AbstractEntity implements ArrayAccess
 	 */
 	public function offsetExists($offset)
 	{
-		assert('is_string($property)');
+		assert('is_string($offset)');
 
 		return $this->isPropertyExists($offset);
 	}
@@ -93,7 +93,7 @@ abstract class AbstractEntity implements ArrayAccess
 	 */
 	public function offsetGet($offset)
 	{
-		assert('is_string($property)');
+		assert('is_string($offset)');
 
 		return $this->getProperty($offset);
 	}
