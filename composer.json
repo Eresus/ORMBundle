@@ -1,0 +1,13 @@
+{
+    "name": "eresus/orm-bundle",
+    "type" : "library",
+    "description": "Расширения ORM для приложений на основе Symfony2",
+    "authors":
+    [
+        {
+            "name": "Михаил Красильников",
+            "email": "mihalych@vsepofigu.ru"
+        }
+    ],
+    "autoload": {"psr-0": {"Eresus\\ORMBundle": "lib/"}}
+}

@@ -22,17 +22,14 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class ORMBundle extends Bundle
 {
-	/**
-	 * Конструктор
-	 *
-	 * @return void
-	 *
-	 * @since 1.0.1
-	 */
-	public function __construct()
-	{
-		// Задаём уникальное имя, чтобы избежать конфликта с другими пакетами
-		$this->name = 'EresusORMBundle';
-	}
-	//-----------------------------------------------------------------------------
+    /**
+     * Конструктор
+     *
+     * @since 1.0.1
+     */
+    public function __construct()
+    {
+        // Задаём уникальное имя, чтобы избежать конфликта с другими пакетами
+        $this->name = 'EresusORMBundle';
+    }
 }

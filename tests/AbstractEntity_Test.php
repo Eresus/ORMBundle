@@ -29,10 +29,9 @@ class AbstractEntity_Test extends \PHPUnit_Framework_TestCase
 		$test->setDate('');
 		$this->assertNull($test->getDate());
 	}
-	//-----------------------------------------------------------------------------
-
-	/* */
 }
+
+
 
 class TestClass extends AbstractEntity
 {
@@ -42,11 +41,9 @@ class TestClass extends AbstractEntity
 	{
 		return $this->date;
 	}
-	//-----------------------------------------------------------------------------
 
 	public function setDate($value)
 	{
 		$this->setDateProperty('date', $value);
 	}
-	//-----------------------------------------------------------------------------
 }
