@@ -251,3 +251,4 @@ abstract class AbstractEntity implements ArrayAccess
         $this->$property = $value;
     }
 }
+
