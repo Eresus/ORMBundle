@@ -248,7 +248,10 @@ abstract class AbstractEntity implements ArrayAccess
         {
             $this->$setter($value);
         }
-        $this->$property = $value;
+        else
+        {
+            $this->$property = $value;
+        }
     }
 }
 

@@ -10,6 +10,19 @@ use Eresus\ORMBundle\AbstractEntity;
 class AbstractEntityTest extends TestCase
 {
     /**
+     * Тест на ошибку, приводящую к перезатиранию значения, установленнго через сеттер свойства
+     * исходным значением.
+     *
+     * @covers Eresus\ORMBundle\AbstractEntity::setProperty
+     */
+    public function testIssueOverwriteProperty()
+    {
+        $test = new TestClass();
+        $test->foo = 'foo';
+        $this->assertEquals('foobar', $test->foo);
+    }
+
+    /**
      * @covers Eresus\ORMBundle\AbstractEntity::setDateProperty
      */
     public function testSetDateProperty()
@@ -36,6 +49,7 @@ class AbstractEntityTest extends TestCase
 
 class TestClass extends AbstractEntity
 {
+    protected $foo;
     protected $date;
 
     public function getDate()
@@ -46,6 +60,11 @@ class TestClass extends AbstractEntity
     public function setDate($value)
     {
         $this->setDateProperty('date', $value);
+    }
+
+    public function setFoo($value)
+    {
+        $this->foo = $value . 'bar';
     }
 }
 
